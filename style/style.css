@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 /* utils */
@@ -16,6 +17,20 @@
 }
 .flex {
   display: flex;
+}
+.img-fluid{
+  width: auto;
+  height: 100%;
+}
+.circle{
+  border-radius: 50%;
+  padding: 5px;
+}
+.mr{
+  margin-right: 10px;
+}
+.pointer{
+  cursor: pointer;
 }
 
 /* macro blocks */
@@ -36,13 +51,46 @@ body {
 #chat-list {
   width: 35%;
   height: 100%;
-  background-color: lightgray;
+  
   border-right: 0.3px solid black;
 }
 
 #current-chat {
   width: 65%;
   height: 100%;
-  background-color: lightgray;
+
 }
-/* w.a interface */
+
+
+/*? CHAT-LIST */
+
+/* my account */
+#user{
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+}
+#user i{
+  color: gray;
+}
+/* enable-notification */
+#enable-notification{
+  height: 80px;
+  background-color:#86d7fa;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+#enable-notification span{
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 14px;
+  color: gray;
+}
+#enable-notification i{
+  background-color: white;
+  padding: 8px;
+  margin-left: 10px;
+  color: #86d7fa;
+}
