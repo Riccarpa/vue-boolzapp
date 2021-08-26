@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Boolzap</title>
     <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
   </head>
 
@@ -13,12 +14,27 @@
     <div id="root">
       <main id="wa-interface" class="flex-center h-100">
         <div class="container flex">
-          <section id="chat-list">
-            <div class="user">
-              <img src="./img/avatar_io.jpg" alt="" />
-              <h3>Nome utente</h3>
+          <section id="chat-list" >
+            <!-- my-account -->
+            <div id="user" >
+              <div class="user-data flex-center h-100 pointer">
+                <img class="img-fluid circle " src="./img/avatar_io.jpg" alt="" />
+                <h4>Nome utente</h4>
+              </div>
+              <div class="icons pointer">
+                <i class="fas fa-circle-notch fa-lg mr"></i>
+                <i class="far fa-comment fa-lg mr"></i>
+                <i class="fas fa-ellipsis-v fa-lg mr"></i>
+              </div>
             </div>
-            <div class="icons"></div>
+            <!-- disclaimer notifiche -->
+            <div  id="enable-notification">
+              <i class="fas fa-bell-slash fa-2x circle mr"></i>
+              <div>
+                <h4>Ricevi notifiche di nuovi messaggi</h4>
+                <span>Attiva notifiche desktop</span>
+              </div>
+            </div>
           </section>
           <section id="current-chat"></section>
         </div>
