@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./style/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src=".//js/users.js"></script>
   </head>
 
   <body>
@@ -31,13 +32,22 @@
             <div  id="enable-notification">
               <i class="fas fa-bell-slash  circle mr"></i>
               <div>
-                <h4>Ricevi notifiche di nuovi messaggi</h4>
+                <p>Ricevi notifiche di nuovi messaggi</p>
                 <span>Attiva notifiche desktop</span>
               </div>
             </div>
             <!-- input search -->
             <div id="search-user">
               <input type="text" value="" placeholder="&#x1F50E;      Cerca o inizia una nuova chat">
+            </div>
+            <!-- recent chat -->
+            <div id="recent-chat">
+              <ul>
+                <li class="contact" v-for="contact in contacts">
+                  <img class="img-fluid circle" :src="'./img/avatar' + contact.avatar + '.jpg'" alt="">
+                  
+                </li>
+              </ul>
             </div>
           </section>
           <section id="current-chat"></section>

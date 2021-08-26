@@ -110,3 +110,12 @@ body {
   font-size: 16px;
   padding-left: 20px;
 }
+
+/* recent-chat */
+#recent-chat {
+  height: calc(100% - 200px );
+  overflow-y: scroll;
+}
+#recent-chat .contact{
+  height:90px ;
+}
