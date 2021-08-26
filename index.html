@@ -6,7 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Boolzap</title>
     <link rel="stylesheet" href="./style/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src=".//js/users.js"></script>
   </head>
@@ -16,11 +22,15 @@
       <main id="wa-interface" class="flex-center h-100">
         <div class="container flex">
           <!-- *++++++++++++++++++++CHATS LIST++++++++++++++++++++++++++++ -->
-          <section id="chat-list" >
+          <section id="chat-list">
             <!-- my-account -->
-            <div id="user" >
+            <div id="user">
               <div class="user-data flex-center h-100 pointer">
-                <img class="img-fluid circle " src="./img/avatar_io.jpg" alt="" />
+                <img
+                  class="img-fluid circle"
+                  src="./img/avatar_io.jpg"
+                  alt=""
+                />
                 <h4>Nome utente</h4>
               </div>
               <div class="icons pointer">
@@ -30,8 +40,8 @@
               </div>
             </div>
             <!-- disclaimer notifiche -->
-            <div  id="enable-notification">
-              <i class="fas fa-bell-slash  circle mr"></i>
+            <div id="enable-notification">
+              <i class="fas fa-bell-slash circle mr"></i>
               <div>
                 <p>Ricevi notifiche di nuovi messaggi</p>
                 <span>Attiva notifiche desktop</span>
@@ -39,40 +49,87 @@
             </div>
             <!-- input search -->
             <div id="search-user">
-              <input type="text" value="" placeholder="&#x1F50E;      Cerca o inizia una nuova chat">
+              <input
+                type="text"
+                value=""
+                placeholder="&#x1F50E;      Cerca o inizia una nuova chat"
+              />
             </div>
             <!-- recent chat -->
             <div id="recent-chat">
               <ul>
                 <li class="contact" v-for="contact in contacts">
-                  <img class="img-fluid circle" :src="'./img/avatar' + contact.avatar + '.jpg'" alt="">
+                  <img
+                    class="img-fluid circle"
+                    :src="'./img/avatar' + contact.avatar + '.jpg'"
+                    alt=""
+                  />
                   <h5>{{contact.name}}</h5>
                 </li>
               </ul>
             </div>
           </section>
-           <!-- *++++++++++++++++++++CHAT SECTION++++++++++++++++++++++++++++ -->
+          <!-- *++++++++++++++++++++CHAT SECTION++++++++++++++++++++++++++++ -->
           <section id="current-chat">
-            <!-- current contact head -->
+            <!-- chat head -->
             <div id="current-contact">
               <div class="flex-start-center h-100">
-                <img class="img-fluid circle" src="./img/avatar_1.jpg" alt="">
+                <img class="img-fluid circle" src="./img/avatar_1.jpg" alt="" />
                 <div>
                   <h4>Michele</h4>
                   <span>Ultimo accesso oggi alle</span>
                 </div>
               </div>
               <div>
-                <i class="fas fa-search  fa-lg"></i>
-                <i class="fas fa-paperclip  fa-lg"></i>
-                <i class="fas fa-ellipsis-v  fa-lg"></i>
+                <i class="fas fa-search fa-lg"></i>
+                <i class="fas fa-paperclip fa-lg"></i>
+                <i class="fas fa-ellipsis-v fa-lg"></i>
               </div>
             </div>
-            <!-- chat -->
+            <!-- chat desk -->
             <div id="chat-desk">
-              
+              <div class="clearfix">
+                <div class="message my-message">
+                  <h4>Hai portato a spasso il cane?</h4>
+                  <span class="date">10/11/2021 15:30</span>
+                </div>
+              </div>
+              <div class="clearfix">
+                <div class="message incoming-message">
+                  <h4>tutto fatto</h4>
+                  <span class="date">10/11/2021 15:30</span>
+                </div>
+              </div>
+              <div class="clearfix">
+                <div class="message my-message">
+                  <h4>Hai portato a spasso il cane?</h4>
+                  <span class="date">10/11/2021 15:30</span>
+                </div>
+              </div>
+              <!-- <div class="message my-message">
+                <span>Hai portato a spasso il cane?</span>
+                <span class="date">10/11/2021 15:30</span>
+              </div>
+              <div class="message incoming-message">
+                <span>tutto fatto</span>
+                <span class="date">10/11/2021 15:30</span>
+              </div>
+              <div class="message my-message">
+                <span>Hai portato a spasso il cane?</span>
+                <span class="date">10/11/2021 15:30</span>
+              </div> -->
             </div>
-            <div id="chat-input"></div>
+            <!-- chat input -->
+            <div id="chat-input">
+              <i class="far fa-smile"></i>
+              <input
+                type="text"
+                name=""
+                id=""
+                placeholder="Scrivi un messaggio"
+              />
+              <i class="fas fa-microphone"></i>
+            </div>
           </section>
         </div>
       </main>

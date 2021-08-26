@@ -7,6 +7,13 @@
 }
 
 /* utils */
+.clearfix:after { 
+  content: "";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
 .flex-center {
   display: flex;
   justify-content: center;
@@ -37,6 +44,7 @@
 .pointer{
   cursor: pointer;
 }
+
 
 
 /* macro blocks */
@@ -131,7 +139,7 @@ body {
 
 /* ? CURRENT CHAT */
 
-/* current contact head */
+/* chat head */
 #current-contact{
   height: 70px;
   background-color: #EAEAEA;
@@ -150,12 +158,65 @@ body {
   padding-right: 30px;
 }
 
-/* chat */
+/* chat desk */
 #chat-desk{
+  
   background-image:url(/img/mine.jpg);
   height:calc(100% - 140px);
+  padding-top: 40px;
 }
+
+.message{
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  width: fit-content;
+  
+}
+.my-message{
+  background-color:#D5F9BA ;
+  margin-top: 20px;
+  float: right;
+  margin-right: 20px;
+  
+  
+}
+.incoming-message{
+  background-color:white ;
+  margin-top: 20px;
+  float: left;
+  margin-left: 20px;
+  
+} 
+.date{
+  display: block;
+  font-size: 12px;
+  color: gray;
+  margin-top: 5px;
+  text-align: right;
+}
+
+
+
+/* chat input */
 #chat-input{
   height: 70px;
   background-color:#ebe4dd ;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#chat-input input{
+  border: 1px solid lightgray ;
+  border-radius: 5px;
+  width: 80%;
+  height: 50px;
+  color: gray;
+  font-size: 16px;
+  padding-left: 20px;
+}
+#chat-input i{
+  color: gray;
+  font-size: 30px;
+  cursor: pointer;
 }
