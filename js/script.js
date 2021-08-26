@@ -5,5 +5,7 @@ const root = new Vue({
     data: {
         contacts,
     },
-    methods: {},
+    methods: {
+      
+    },
 })
