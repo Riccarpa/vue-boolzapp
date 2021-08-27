@@ -7,6 +7,10 @@ const root = new Vue({
         
     },
     methods: {
+      isVisible(contact){
+         return contact.visible;
+      },
       
+
     },
 })

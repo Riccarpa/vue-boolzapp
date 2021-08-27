@@ -58,7 +58,7 @@
             <!-- recent chat -->
             <div id="recent-chat">
               <ul>
-                <li class="contact" v-for="contact in data.contacts">
+                <li class="contact" v-for="contact in data.contacts" @click="contact.visible=!contact.visible">
                   <img
                     class="img-fluid circle"
                     :src="'./img/avatar' + contact.avatar + '.jpg'"
@@ -70,13 +70,13 @@
             </div>
           </section>
           <!-- *++++++++++++++++++++CHAT SECTION++++++++++++++++++++++++++++ -->
-          <section id="current-chat">
+          <section v-for="contact in data.contacts" :class="isVisible(contact) ? 'd-none' : '' " id="current-chat">
             <!-- chat head -->
             <div id="current-contact">
               <div class="flex-start-center h-100">
-                <img class="img-fluid circle" src="./img/avatar_1.jpg" alt="" />
+                <img class="img-fluid circle" :src="`./img/avatar${contact.avatar}.jpg`" alt="" />
                 <div>
-                  <h4>Michele</h4>
+                  <h4>{{contact.name}}</h4>
                   <span>Ultimo accesso oggi alle</span>
                 </div>
               </div>
@@ -108,6 +108,7 @@
               </div>
               
             </div>
+            
             <!-- chat input -->
             <div id="chat-input">
               <i class="far fa-smile"></i>
@@ -120,6 +121,9 @@
               <i class="fas fa-microphone"></i>
             </div>
           </section>
+          
+          
+          
         </div>
       </main>
     </div>
