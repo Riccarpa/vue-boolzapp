@@ -58,7 +58,7 @@
             <!-- recent chat -->
             <div id="recent-chat">
               <ul>
-                <li class="contact" v-for="contact in data.contacts" @click="contact.visible=!contact.visible">
+                <li class="contact" v-for="(contact,index) in data.contacts" @click="selectIndex(index)">
                   <img
                     class="img-fluid circle"
                     :src="'./img/avatar' + contact.avatar + '.jpg'"
@@ -70,7 +70,7 @@
             </div>
           </section>
           <!-- *++++++++++++++++++++CHAT SECTION++++++++++++++++++++++++++++ -->
-          <section v-for="contact in data.contacts"  v-if="!contact.visible" id="current-chat">
+          <section v-for="(contact,index) in data.contacts"  v-if="index === visibilityIndex" id="current-chat">
             <!-- chat head -->
             <div id="current-contact">
               <div class="flex-start-center h-100">
