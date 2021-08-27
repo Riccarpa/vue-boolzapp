@@ -14,6 +14,7 @@ const data = {
           message: 'Hai portato a spasso il cane?',
           status: 'sent',
         },
+        
         {
           date: '10/01/2020 15:50:00',
           message: 'Ricordati di dargli da mangiare',
@@ -44,7 +45,7 @@ const data = {
         {
           date: '20/03/2020 16:35:00',
           message: 'Mi piacerebbe ma devo andare a fare la spesa.',
-          status: 'received',
+          status: 'sent',
         },
       ],
     },
