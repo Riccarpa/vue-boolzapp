@@ -7,9 +7,14 @@ const root = new Vue({
         
     },
     methods: {
-      isVisible(contact){
-         return contact.visible;
-      },
+        getMessageType(message){
+            if(message.status==='sent'){
+                return 'my-message'
+            }
+            else{
+                return 'incoming-message'
+            }
+        }
       
 
     },

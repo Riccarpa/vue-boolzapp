@@ -70,7 +70,7 @@
             </div>
           </section>
           <!-- *++++++++++++++++++++CHAT SECTION++++++++++++++++++++++++++++ -->
-          <section v-for="contact in data.contacts" :class="isVisible(contact) ? 'd-none' : '' " id="current-chat">
+          <section v-for="contact in data.contacts" v-if="!contact.visible" id="current-chat">
             <!-- chat head -->
             <div id="current-contact">
               <div class="flex-start-center h-100">
@@ -88,25 +88,13 @@
             </div>
             <!-- chat desk -->
             <div id="chat-desk">
-              <div class="clearfix">
-                <div class="message my-message">
-                  <h4>Hai portato a spasso il cane?</h4>
-                  <span class="date">10/11/2021 15:30</span>
+              <div v-for="message in contact.messages" class="clearfix">
+                <div :class="getMessageType(message)" class="message">
+                  <h4>{{message.message}}</h4>
+                  <span class="date">{{message.date}}</span>
                 </div>
               </div>
-              <div class="clearfix">
-                <div class="message incoming-message">
-                  <h4>tutto fatto</h4>
-                  <span class="date">10/11/2021 15:30</span>
-                </div>
-              </div>
-              <div class="clearfix">
-                <div class="message my-message">
-                  <h4>Hai portato a spasso il cane?</h4>
-                  <span class="date">10/11/2021 15:30</span>
-                </div>
-              </div>
-              
+             
             </div>
             
             <!-- chat input -->
