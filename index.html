@@ -14,7 +14,7 @@
       referrerpolicy="no-referrer"
     />
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src=".//js/users.js"></script>
+    <script src="./js/data.js"></script>
   </head>
 
   <body>
@@ -58,7 +58,7 @@
             <!-- recent chat -->
             <div id="recent-chat">
               <ul>
-                <li class="contact" v-for="contact in contacts">
+                <li class="contact" v-for="contact in data.contacts">
                   <img
                     class="img-fluid circle"
                     :src="'./img/avatar' + contact.avatar + '.jpg'"
@@ -106,18 +106,7 @@
                   <span class="date">10/11/2021 15:30</span>
                 </div>
               </div>
-              <!-- <div class="message my-message">
-                <span>Hai portato a spasso il cane?</span>
-                <span class="date">10/11/2021 15:30</span>
-              </div>
-              <div class="message incoming-message">
-                <span>tutto fatto</span>
-                <span class="date">10/11/2021 15:30</span>
-              </div>
-              <div class="message my-message">
-                <span>Hai portato a spasso il cane?</span>
-                <span class="date">10/11/2021 15:30</span>
-              </div> -->
+              
             </div>
             <!-- chat input -->
             <div id="chat-input">

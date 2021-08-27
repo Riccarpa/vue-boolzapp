@@ -60,12 +60,13 @@ body {
   height: 90vh;
   width: 80%;
   background-color: white;
+ 
 }
 
 #chat-list {
   width: 35%;
   height: 100%;
-  border-right: 0.3px solid black;
+  border-right: 0.3px solid blue;
 }
 
 #current-chat {
@@ -164,6 +165,7 @@ body {
   background-image:url(/img/mine.jpg);
   height:calc(100% - 140px);
   padding-top: 40px;
+  overflow-y: scroll;
 }
 
 .message{
@@ -171,11 +173,11 @@ body {
   padding: 15px;
   border-radius: 10px;
   width: fit-content;
+  margin-top: 20px;
   
 }
 .my-message{
   background-color:#D5F9BA ;
-  margin-top: 20px;
   float: right;
   margin-right: 20px;
   
@@ -183,7 +185,6 @@ body {
 }
 .incoming-message{
   background-color:white ;
-  margin-top: 20px;
   float: left;
   margin-left: 20px;
   
