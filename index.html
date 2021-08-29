@@ -14,6 +14,8 @@
       referrerpolicy="no-referrer"
     />
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.6/dayjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.6/plugin/customParseFormat.js"></script>
     <script src="./js/data.js"></script>
   </head>
 
@@ -88,19 +90,28 @@
             </div>
             <!-- chat desk -->
             <div id="chat-desk">
-              <div v-for="message in contact.messages" class="clearfix">
+              <div v-for="(message,index) in contact.messages" class="clearfix">
                 <div :class="getMessageType(message)" class="message">
                   <h4>{{message.message}}</h4>
                   <span class="date">{{message.date}}</span>
                 </div>
               </div>
+              
+              <!-- <div v-for="(message,index) in newMessages" class="clearfix">
+                <div :class="getMessageType(message)" class="message">
+                  <h4>{{newMessages[index].message}}</h4>
+                  <span class="date">{{newMessages[index].date}}</span>
+                </div>
+              </div> -->
+              
              
             </div>
-            
             <!-- chat input -->
             <div id="chat-input">
               <i class="far fa-smile"></i>
               <input
+               @keyup.enter = "newMessagePush(index)"
+                v-model="newMessage"
                 type="text"
                 name=""
                 id=""
@@ -108,6 +119,7 @@
               />
               <i class="fas fa-microphone"></i>
             </div>
+            
           </section>
           
           
