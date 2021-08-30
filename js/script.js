@@ -24,12 +24,19 @@ const root = new Vue({
            
         },
         newMessagePush(index){
-            this.data.contacts[index].messages.push({message:this.newMessage, status:'sent',date:this.date});
+            this.data.contacts[index].messages.push({message:this.newMessage, status:'sent',date:dayjs().format('DD/MM/YY HH:mm')});
             
             setTimeout(() => {
                 this.data.contacts[index].messages.push({message:'ok', status:'received',date:dayjs().format('DD/MM/YY HH:mm')});
             }, 1000);
             this.newMessage = '';
+        },
+        getLastMessageDate(){
+           const messages = this.data.contacts[this.visibilityIndex].messages;
+           const receivedMessage = messages.filter((item)=>item.status === 'received');
+           const lastReceivedMessage = receivedMessage[receivedMessage.length -1];
+           return lastReceivedMessage.date;
+            
         }
       
 
