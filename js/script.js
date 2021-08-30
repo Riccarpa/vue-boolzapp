@@ -7,6 +7,7 @@ const root = new Vue({
         visibilityIndex:0,
         newMessage:'',
         date: dayjs().format('DD/MM/YY HH:mm'),
+        contactSearch:'',
         
     },
     methods: {
@@ -37,6 +38,15 @@ const root = new Vue({
            const lastReceivedMessage = receivedMessage[receivedMessage.length -1];
            return lastReceivedMessage.date;
             
+        },
+        contactFilter(nome){
+            if(!this.contactSearch || this.contactSearch === ''){
+                return true;
+            }
+            const filter = this.contactSearch.trim().toLowerCase();
+            const contact = nome.toLowerCase();
+            return contact.includes(filter);
+           
         }
       
 

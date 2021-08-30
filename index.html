@@ -52,6 +52,7 @@
             <!-- input search -->
             <div id="search-user">
               <input
+              v-model = "contactSearch"
                 type="text"
                 value=""
                 placeholder="&#x1F50E;      Cerca o inizia una nuova chat"
@@ -60,7 +61,7 @@
             <!-- recent chat -->
             <div id="recent-chat">
               <ul>
-                <li class="contact" v-for="(contact,index) in data.contacts" @click="selectIndex(index)">
+                <li v-if="contactFilter(contact.name)" class="contact" v-for="(contact,index) in data.contacts" @click="selectIndex(index)">
                   <img
                     class="img-fluid circle"
                     :src="'./img/avatar' + contact.avatar + '.jpg'"
