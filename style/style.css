@@ -53,6 +53,9 @@
 .bg-gray{
   background-color: lightgray;
 }
+.info-button:hover .info{
+display: block;
+}
 
 
 /* macro blocks */
@@ -68,6 +71,7 @@ body {
   height: 90vh;
   width: 80%;
   background-color: white;
+  
  
 }
 
@@ -191,7 +195,7 @@ body {
   width: fit-content;
   margin-top: 20px;
   position: relative;
-  
+  box-shadow:3px 3px lightgray;
 }
 .message i{
   color: lightgray;
@@ -202,13 +206,17 @@ body {
 }
 .message .info{
   position: absolute;
-  top:50%;
-  left: 50%;
+  top:25%;
+  right: 0;
   background-color: white;
   border-radius: 10px;
   z-index: 1;
   box-shadow:3px 3px gray;
-  border: 1px solid gray;
+  border: 1px solid lightgray;
+  
+}
+.info{
+  display: none;
 }
 .message .info span {
   padding:5px;
@@ -220,7 +228,7 @@ body {
   
 }
 .message .info  span:first-child{
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid lightgray;
   border-radius: 10px 10px 0 0;
 }
 .message .info  span:last-child{

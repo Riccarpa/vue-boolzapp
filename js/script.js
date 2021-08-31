@@ -8,8 +8,7 @@ const root = new Vue({
         newMessage:'',
         date: dayjs().format('DD/MM/YY HH:mm'),
         contactSearch:'',
-        isVisible:false,
-       isWriting:false,
+        isWriting:false,
         
     },
     methods: {
@@ -59,7 +58,10 @@ const root = new Vue({
             return contact.includes(filter);
            
         },
-        
+        hideMessage(message){
+            message.hide = true;
+            console.log(message);
+        }
       
 
     },
