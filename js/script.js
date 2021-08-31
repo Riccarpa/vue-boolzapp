@@ -8,7 +8,8 @@ const root = new Vue({
         newMessage:'',
         date: dayjs().format('DD/MM/YY HH:mm'),
         contactSearch:'',
-       
+        isVisible:false,
+       isWriting:false,
         
     },
     methods: {
@@ -27,10 +28,14 @@ const root = new Vue({
         },
         newMessagePush(index){
             this.data.contacts[index].messages.push({message:this.newMessage, status:'sent',date:dayjs().format('DD/MM/YY HH:mm:ss')});
+            this.isWriting = true;
             
             setTimeout(() => {
+                this.isWriting=false;
                 this.data.contacts[index].messages.push({message:'ok', status:'received',date:dayjs().format('DD/MM/YY HH:mm:ss')});
             }, 1000);
+            
+            
             this.newMessage = '';
         },
         getLastMessageDate(){
@@ -54,7 +59,7 @@ const root = new Vue({
             return contact.includes(filter);
            
         },
-       
+        
       
 
     },

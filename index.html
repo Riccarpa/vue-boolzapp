@@ -82,9 +82,11 @@
             <div id="current-contact">
               <div class="flex-start-center h-100">
                 <img class="img-fluid circle" :src="`./img/avatar${contact.avatar}.jpg`" alt="" />
-                <div>
+                
+                <div >
                   <h4>{{contact.name}}</h4>
-                  <span>Ultimo accesso oggi alle {{getLastMessageDate()}}</span>
+                  <span v-if="isWriting">Sta scrivendo...</span>
+                  <span v-else>Ultimo accesso oggi alle {{getLastMessageDate()}}</span>
                 </div>
               </div>
               <div>
@@ -97,10 +99,10 @@
             <div id="chat-desk">
               <div v-for="(message,index) in contact.messages" class="clearfix">
                 <div :class="getMessageType(message)" class="message">
-                  <i class="fas fa-chevron-down" @click=""></i>
+                  <i class="fas fa-chevron-down" @click="isVisible = !isVisible"></i>
                   <h4>{{message.message}}</h4>
                   <span class="date">{{message.date}}</span>
-                  <div  v-if=""   class="info">
+                  <div  v-if="isVisible"    class="info">
                     <span>elimina</span>
                     <span>info</span>
                   </div>
