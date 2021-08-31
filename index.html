@@ -61,7 +61,8 @@
             <!-- recent chat -->
             <div id="recent-chat">
               <ul>
-                <li v-if="contactFilter(contact.name)" class="contact" :class="index === visibilityIndex ? 'bg-gray' : '' " v-for="(contact,index) in data.contacts" @click="selectIndex(index)">
+                <li v-if="contactFilter(contact.name)" class="contact" :class="index === visibilityIndex ? 'bg-gray' : '' "  v-for="(contact,index) in data.contacts" @click="selectIndex(index)">
+                  
                   <img
                     class="img-fluid circle"
                     :src="'./img/avatar' + contact.avatar + '.jpg'"
@@ -70,7 +71,7 @@
                   <div>
                     <h4>{{contact.name}}</h4>
                     <p>{{getLastMessage(index)}}</p>
-                    <p>{{getLastMessageDate()}}</p>
+                    <p>{{getLastMessageDate(index)}}</p>
                   </div>
                 </li>
               </ul>
@@ -86,7 +87,7 @@
                 <div >
                   <h4>{{contact.name}}</h4>
                   <span v-if="isWriting">Sta scrivendo...</span>
-                  <span v-else>Ultimo accesso oggi alle {{getLastMessageDate()}}</span>
+                  <span v-else>Ultimo accesso oggi alle {{getLastMessageDate(index)}}</span>
                 </div>
               </div>
               <div>
@@ -97,12 +98,12 @@
             </div>
             <!-- chat desk -->
             <div id="chat-desk">
-              <div id="chat-message" v-for="(message,index) in contact.messages" class="clearfix ">
-                <div  :class="getMessageType(message)" class="message">
+              <div id="chat-message"  v-for="(message,index) in contact.messages" class="clearfix ">
+                <div v-if="!message.hide" :class="getMessageType(message)" class="message">
                   <div class="info-button">
                     <i class="fas fa-chevron-down" ></i>
                     <div class="info">
-                      <span @click="hideMessage(message)">Elimina</span>
+                      <span @click="hideMessage(index)">Elimina</span>
                       <span>Info</span>
                     </div>
                   </div>
