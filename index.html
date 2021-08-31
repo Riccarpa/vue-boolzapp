@@ -61,7 +61,7 @@
             <!-- recent chat -->
             <div id="recent-chat">
               <ul>
-                <li v-if="contactFilter(contact.name)" class="contact" v-for="(contact,index) in data.contacts" @click="selectIndex(index)">
+                <li v-if="contactFilter(contact.name)" class="contact" :class="index === visibilityIndex ? 'bg-gray' : '' " v-for="(contact,index) in data.contacts" @click="selectIndex(index)">
                   <img
                     class="img-fluid circle"
                     :src="'./img/avatar' + contact.avatar + '.jpg'"

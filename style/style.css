@@ -50,6 +50,9 @@
 .visible{
   display: block;
 }
+.bg-gray{
+  background-color: lightgray;
+}
 
 
 /* macro blocks */
