@@ -20,6 +20,14 @@ const root = new Vue({
                 return 'incoming-message'
             }
         },
+        getMessageType2(message){
+            if(message.status==='sent'){
+                return 'arrow-right'
+            }
+            else{
+                return 'arrow-left'
+            }
+        },
         selectIndex(index){
             
            this.visibilityIndex = index;

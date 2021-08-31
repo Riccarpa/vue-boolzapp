@@ -97,7 +97,7 @@
             </div>
             <!-- chat desk -->
             <div id="chat-desk">
-              <div v-for="(message,index) in contact.messages" class="clearfix">
+              <div id="chat-message" v-for="(message,index) in contact.messages" class="clearfix ">
                 <div  :class="getMessageType(message)" class="message">
                   <div class="info-button">
                     <i class="fas fa-chevron-down" ></i>
@@ -109,8 +109,8 @@
                   <h4>{{message.message}}</h4>
                   <span class="date">{{message.date}}</span>
                   
+                  <div :class="getMessageType2(message)"></div>
                 </div>
-                
               </div>
            
             </div>

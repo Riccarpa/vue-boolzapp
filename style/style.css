@@ -56,6 +56,31 @@
 .info-button:hover .info{
 display: block;
 }
+.arrow-left {
+  position: absolute;
+  bottom: 0;
+  right: 100%;
+  width: 0; 
+  height: 0; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent; 
+  
+  border-right:10px solid white; 
+}
+.arrow-right {
+  position: absolute;
+  bottom: 0;
+  left:100%;
+  width: 0; 
+  height: 0; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  
+  border-left: 10px solid #D5F9BA;
+}
+.message{
+  position: relative;
+}
 
 
 /* macro blocks */
@@ -191,7 +216,7 @@ body {
 .message{
   background-color: white;
   padding: 20px;
-  border-radius: 10px;
+  
   width: fit-content;
   margin-top: 20px;
   position: relative;
@@ -238,13 +263,14 @@ border-radius: 0 0 10px 10px;
   background-color:#D5F9BA ;
   float: right;
   margin-right: 20px;
-  
+  border-radius: 10px 10px 0 10px;
   
 }
 .incoming-message{
   background-color:white ;
   float: left;
   margin-left: 20px;
+  border-radius: 10px 10px 10px 0;
   
 } 
 .date{
