@@ -97,19 +97,17 @@
             <div id="chat-desk">
               <div v-for="(message,index) in contact.messages" class="clearfix">
                 <div :class="getMessageType(message)" class="message">
+                  <i class="fas fa-chevron-down" @click=""></i>
                   <h4>{{message.message}}</h4>
                   <span class="date">{{message.date}}</span>
+                  <div  v-if=""   class="info">
+                    <span>elimina</span>
+                    <span>info</span>
+                  </div>
                 </div>
+                
               </div>
-              
-              <!-- <div v-for="(message,index) in newMessages" class="clearfix">
-                <div :class="getMessageType(message)" class="message">
-                  <h4>{{newMessages[index].message}}</h4>
-                  <span class="date">{{newMessages[index].date}}</span>
-                </div>
-              </div> -->
-              
-             
+           
             </div>
             <!-- chat input -->
             <div id="chat-input">

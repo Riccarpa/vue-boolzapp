@@ -8,6 +8,7 @@ const root = new Vue({
         newMessage:'',
         date: dayjs().format('DD/MM/YY HH:mm'),
         contactSearch:'',
+       
         
     },
     methods: {
@@ -52,7 +53,8 @@ const root = new Vue({
             const contact = nome.toLowerCase();
             return contact.includes(filter);
            
-        }
+        },
+       
       
 
     },
