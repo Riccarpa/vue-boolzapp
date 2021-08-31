@@ -67,7 +67,11 @@
                     :src="'./img/avatar' + contact.avatar + '.jpg'"
                     alt=""
                   />
-                  <h5>{{contact.name}}</h5>
+                  <div>
+                    <h4>{{contact.name}}</h4>
+                    <p>{{getLastMessage(index)}}</p>
+                    <p>{{getLastMessageDate()}}</p>
+                  </div>
                 </li>
               </ul>
             </div>

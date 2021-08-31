@@ -25,10 +25,10 @@ const root = new Vue({
            
         },
         newMessagePush(index){
-            this.data.contacts[index].messages.push({message:this.newMessage, status:'sent',date:dayjs().format('DD/MM/YY HH:mm')});
+            this.data.contacts[index].messages.push({message:this.newMessage, status:'sent',date:dayjs().format('DD/MM/YY HH:mm:ss')});
             
             setTimeout(() => {
-                this.data.contacts[index].messages.push({message:'ok', status:'received',date:dayjs().format('DD/MM/YY HH:mm')});
+                this.data.contacts[index].messages.push({message:'ok', status:'received',date:dayjs().format('DD/MM/YY HH:mm:ss')});
             }, 1000);
             this.newMessage = '';
         },
@@ -38,6 +38,11 @@ const root = new Vue({
            const lastReceivedMessage = receivedMessage[receivedMessage.length -1];
            return lastReceivedMessage.date;
             
+        },
+        getLastMessage(index){
+            const messages = this.data.contacts[index].messages;
+            const lastMessage = messages[messages.length -1 ].message;
+            return lastMessage;
         },
         contactFilter(nome){
             if(!this.contactSearch || this.contactSearch === ''){
